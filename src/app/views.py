@@ -30,11 +30,18 @@ def index():
 
     if request.method == 'POST' and form.validate():
         user = User.get_cuit(form.cuit.data)
+        id = User.get_by_id(form.id.data)
 
         if user:
             login_user(user)
             flash('Usuario encontrado')
             return redirect(url_for('.get_cuit_info'))
+
+        elif id:
+            login_user(id)
+            flash('Usuario encontrado')
+            return redirect(url_for('.get_cuit_info'))
+
         else:
             flash('CUIT no encontrado', 'error')
 

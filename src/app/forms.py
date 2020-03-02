@@ -9,9 +9,9 @@ from .models import User
 # Mi clase debe heredar de Form
 class LoginForm(Form):
     # Mis campos, deben resivir sus label si o si
-    cuit = StringField('Cuit', [
-        validators.InputRequired(message='Debes ingresar un CUIT')
-    ])
+    cuit = StringField('Cuit')
+
+    id = StringField('Id')
 
 class RegisterForm(Form):
     user = StringField(

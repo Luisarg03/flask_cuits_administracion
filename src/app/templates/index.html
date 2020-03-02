@@ -43,6 +43,30 @@
                     </div>
                 </div>
 
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col">
+                            <h3>ID de cliente</h3>
+
+                            <form method="POST">
+                                <input type='hidden' name='csrf_token'
+                                value="{{csrf_token()}}">
+                            
+                                <div>           
+                                    <div class="col-8 mx-auto">
+                                        {{ render_field(form.id, required=False, class='form-control text-center', placeholder='Ingresá ID') }}
+                                    </div> 
+                                    
+                                </div> 
+
+                                <br>
+                                <button type="submit" class="btn btn-success mx-auto">
+                                <h6>Buscar</h6>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div> 
 
         </div>
